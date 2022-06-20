@@ -1,6 +1,7 @@
 import express from "express";
 import {db} from "../db/db.js"
 import path, {dirname} from "path";
+
 const app = express();
 
 app.set("json spaces", 40);

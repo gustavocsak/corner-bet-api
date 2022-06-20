@@ -1,0 +1,22 @@
+{
+  "name": "corner-bet-api",
+  "version": "1.0.0",
+  "description": "REST API for predictions created in the corner-bet scrapper",
+  "main": "/src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gustavocsak/corner-bet-api.git"
+  },
+  "author": "Gustavo Carvalhaes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gustavocsak/corner-bet-api/issues"
+  },
+  "homepage": "https://github.com/gustavocsak/corner-bet-api#readme",
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}

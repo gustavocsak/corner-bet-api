@@ -4,7 +4,8 @@
   "description": "REST API for predictions created in the corner-bet scrapper",
   "main": "/src/app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon src/app.js"
   },
   "repository": {
     "type": "git",
@@ -19,7 +20,8 @@
   "dependencies": {
     "dotenv": "^16.0.1",
     "express": "^4.18.1",
-    "mongoose": "^6.4.0"
+    "mongoose": "^6.4.0",
+    "nodemon": "^2.0.18"
   },
   "type": "module"
 }

@@ -1,7 +1,9 @@
-import { Prediction } from "../../../db/models/prediction";
-import { Result } from "../../../db/models/result";
+import { Prediction } from "../../../db/models/prediction.js";
+import { Result } from "../../../db/models/result.js";
 
-const getResults = (req, res, next) => {
+const controllers = {}
+
+controllers.getResults = (req, res, next) => {
     Result.find({})
         .exec()
         .then((result) => {
@@ -12,7 +14,7 @@ const getResults = (req, res, next) => {
         })
 } 
 
-const getPredictions = (req, res, next) => {
+controllers.getPredictions = (req, res, next) => {
     Prediction.find({})
         .exec()
         .then((result) => {
@@ -23,4 +25,4 @@ const getPredictions = (req, res, next) => {
         })
 }
 
-export { getResults, getPredictions }
+export default controllers

@@ -1,9 +1,9 @@
 import express from "express";
-import { getPredictions, getResults } from "../controllers/mainController.js";
+import controllers from "../controllers/mainController.js";
 
 const router = express.Router({mergeParams: true});
 
-router.get("/predictions", getPredictions);
-router.get("/results", getResults);
+router.get("/predictions", controllers.getPredictions);
+router.get("/results", controllers.getResults);
 
-export { router }
+export default router

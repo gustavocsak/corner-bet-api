@@ -2,6 +2,7 @@ import express from "express";
 import {db} from "../../db/db.js"
 import path, {dirname} from "path";
 import { Prediction } from "../../db/models/prediction.js"
+import router from "./routes/index.js"
 
 const app = express();
 
@@ -14,18 +15,4 @@ db.on("open", () => {
     const server = app.listen(process.env.PORT || 3000, () => console.log("Listening..."));
 })
 
-// Testing purposes:
-
-app.get("/", (req, res) => {
-    Prediction.find({})
-        .exec()
-        .then((item) => {
-            res.status(200).json(item)
-        })
-        .catch((error) => {
-            console.log(error)
-            res.status(500).json(error);
-        })
-})
-
-// const router = require(path.join(__dirname, routes))
+app.use('/api/v1', router);

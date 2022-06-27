@@ -1,7 +1,7 @@
 import express from "express";
-import {db} from "../db/db.js"
+import {db} from "../../db/db.js"
 import path, {dirname} from "path";
-import { Prediction } from "../db/models/prediction.js";
+import { Prediction } from "../../db/models/prediction.js"
 
 const app = express();
 

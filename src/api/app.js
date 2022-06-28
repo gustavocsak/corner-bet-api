@@ -1,7 +1,5 @@
 import express from "express";
 import {db} from "../../db/db.js"
-import path, {dirname} from "path";
-import { Prediction } from "../../db/models/prediction.js"
 import router from "./routes/index.js"
 
 const app = express();

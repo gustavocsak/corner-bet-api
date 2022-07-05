@@ -3,11 +3,19 @@ import dotenv from "dotenv";
 import { fileURLToPath } from "url";
 import mongoose from "mongoose";
 
-const __dirname = dirname(fileURLToPath(import.meta.url));
-dotenv.config({path: path.resolve(__dirname, '.env')});
+async function connect() {
+    const __dirname = dirname(fileURLToPath(import.meta.url));
+    dotenv.config({path: path.join(__dirname, ".env")});
 
-let mongoDB = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_KEY}@cluster0.5gryi.mongodb.net/Matches?retryWrites=true&w=majority`;
+    const mongoDBuri = `mongodb+srv://${process.env.DB_USER}:${process.env.DB_KEY}@cluster0.5gryi.mongodb.net/Matches?retryWrites=true&w=majority`;
+    
+    try {
+        mongoose.connect(mongoDBuri);
+        console.log("Database connected")
+    } catch(error) {
+        console.log("Could not connect to database")
+        process.exit(1);
+    }
+}
 
-mongoose.connect(mongoDB);
-
-export const db = mongoose.connection;
+export default connect;

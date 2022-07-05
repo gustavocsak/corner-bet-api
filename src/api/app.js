@@ -1,14 +1,12 @@
+import connect from "../../db/db.js"
+import createServer from "./start.js"
 import express from "express";
-import router from "./routes/index.js"
 
-const app = express();
+const app = createServer();
 
-app.set("json spaces", 40);
-app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.listen(3000, async() => {
+    console.log("Listening...");
+    await connect();
+})
 
 
-
-app.use('/api/v1', router);
-
-export default app

@@ -6,7 +6,7 @@
   "scripts": {
     "test": "jest",
     "test:watch": "npm run test -- --watch",
-    "dev": "nodemon src/api/start.js"
+    "dev": "nodemon src/api/app.js"
   },
   "repository": {
     "type": "git",

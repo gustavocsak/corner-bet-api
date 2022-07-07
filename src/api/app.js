@@ -1,12 +1,11 @@
-import connect from "../../db/db.js"
-import createServer from "./start.js"
+import db from "../../db/db.js"
+import createServer from "./utils/createServer.js"
 import express from "express";
 
 const app = createServer();
 
-app.listen(3000, async() => {
-    console.log("Listening...");
-    await connect();
+db.on("open", () => {
+    console.log("Connected to database!")
+    const server = app.listen(process.env.PORT || 3000, () => console.log("Listening. . ."))
 })
-
 
